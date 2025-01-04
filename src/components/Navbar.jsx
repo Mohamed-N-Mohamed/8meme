@@ -9,6 +9,8 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import { Link } from 'react-router-dom';
+
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 const Navbar = () => {
   //create dark colour theme
@@ -20,6 +22,7 @@ const Navbar = () => {
       },
     },
   });
+
   return (
     <Box>
       <ThemeProvider theme={darkTheme}>
@@ -47,8 +50,12 @@ const Navbar = () => {
 
             <Typography sx={{ flexGrow: 1 }}>News</Typography>
 
-            <Button color='inherit'>Sign Up</Button>
-            <Button color='inherit'>Login</Button>
+            <Button color='inherit' LinkComponent={Link} to='/register'>
+              Sign Up
+            </Button>
+            <Button color='inherit' LinkComponent={Link} to='/login'>
+              Login
+            </Button>
           </Toolbar>
         </AppBar>
       </ThemeProvider>
